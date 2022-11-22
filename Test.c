@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<string.h>
+#include<stdlib.h>
 //t - car's type
 //c - car's colour
 //f - furniture
@@ -234,31 +235,36 @@ else if(c == 8)
 }
 return m_1;
 }
-void promotion(char *code)
+void promotion(int a)
 {
-    char *correct_code = "RACINGBOI";
-    int result;
-    result = strcmp(*code,*correct_code);
-    if(result == 0)
+    if(a == 171218)
 {
     printf("Congratulations, you have the 25 discount to your total bill :3 \n");
 }
     else
 {
     printf("Sorry, your promotion is not valid\n");
-    printf("Please check again or contact to our sellers");
+    printf("Please check again or contact to our sellers\n");
 }
 }
-void final_price(long double m, long double m_1)
+double final_price(long double m, long double m_1)
 {
     long double f_m = m + m_1;
-    printf("\nThe final price you have to pay is:\n");
-    printf("%.5Lf VND",f_m);
+    return f_m;
+}
+void price_after_discount(int a, long double b)
+{
+    float d = 0.25;
+    if(a == 171218)
+    {
+        b = b - b * d;
+        printf("\nThe price after discount is: %.5Lf\n", b);
+    }
 }
 int main()
 {
     char t;
-    int c;
+    int c,a;
     long double m,m_1;
     printf("Please enter the type of car you fond of:\n");
     t = getchar();
@@ -267,12 +273,14 @@ int main()
     scanf("%d",&c);
     car_colour(c);
     printf("\nEnter your promotion code:\n");
-    char *code;
-    scanf("%s",&code);
-    promotion(code);
+    scanf("%d",&a);
+    promotion(a);
     m = car_price(t);
     m_1 = car_colour_price(c);
-    final_price(m,m_1);
-    printf("\nDone...");
+    long double f_m = final_price(m,m_1);
+    printf("The final price you have to pay is:\n");
+    printf("%.5Lf VND",f_m);
+    price_after_discount(a,f_m);
+    printf("Done...");
     return 0;
 }
