@@ -1,24 +1,23 @@
 #include <stdio.h>
 #include <conio.h>
-#include <string.h>
 
 struct DongXe {
-    int gia_xe;
+    double gia_xe;
 };
 
 struct MauXe {
-    int gia_son;
+    double gia_son;
 };
 
 struct NoiThatXe {
-    int gia_noi_that;
+    double gia_noi_that;
 };
 
 struct BaoHanhXe {
-    int gia_bao_hanh;    
+    double gia_bao_hanh;    
 };
 
-int car_line(int current_total, struct DongXe cars[11])
+double car_line(double current_total, struct DongXe cars[])
 {   
     int m;
     printf("Danh sach nhung dong xe Porsche chung toi hien co:\n");
@@ -42,7 +41,7 @@ int car_line(int current_total, struct DongXe cars[11])
     return current_total;
 }
 
-int paint(int current_total, struct MauXe paint_price[])
+double paint(double current_total, struct MauXe paint_price[])
 {
     int n;
     printf("Danh sach nhung mau sac chung toi hien co:\n");
@@ -60,7 +59,7 @@ int paint(int current_total, struct MauXe paint_price[])
     return current_total;
 }
 
-int interior(int current_total, struct NoiThatXe interior_price[])
+double interior(double current_total, struct NoiThatXe interior_price[])
 {
     int o;
     printf("Danh sach nhung loai noi that chung toi hien co:\n");
@@ -78,7 +77,7 @@ int interior(int current_total, struct NoiThatXe interior_price[])
     return current_total;
 }
 
-int insurance(int current_total, struct BaoHanhXe insurance_price[])
+double insurance(double current_total, struct BaoHanhXe insurance_price[])
 {
     int p;
     printf("Danh sach nhung goi bao hanh xe chung toi hien co:\n");
@@ -96,19 +95,54 @@ int insurance(int current_total, struct BaoHanhXe insurance_price[])
 }
 int main()
 {
-    int total=0;
-    int test;
+    double total=0;
     struct DongXe cars[12];
+    struct MauXe paint_price[10];
+    struct NoiThatXe interior_price[4];
+    struct BaoHanhXe insurance_price[4];
     FILE *f;
-    int buffer;
-
+    double buffer;
     /* Open file for both reading and writing */
-    f = fopen("file.txt", "r");
+    f = fopen("C:\\Khoa\\UTE_HK1_N2\\C Programming\\Cars\\car_line.txt", "r");
 
     /* Read and display data */
-    fread(&buffer, sizeof(int), 1, f);
-    printf("%d\n", buffer);
+    for (int i=0; i<10; i++)
+    {
+        fscanf(f, "%lf", &buffer);
+        cars[i].gia_xe= buffer;
+        printf("%f", cars[i].gia_xe);
+    }
     fclose(f);
 
+    f = fopen("C:\\Khoa\\UTE_HK1_N2\\C Programming\\Cars\\car_paint.txt", "r");
+    for (int i=0; i<8; i++)
+    {
+        fscanf(f, "%lf", &buffer);
+        paint_price[i].gia_son= buffer;
+    }
+    fclose(f);
+
+    f = fopen("C:\\Khoa\\UTE_HK1_N2\\C Programming\\Cars\\car_interior.txt", "r");
+    for (int i=0; i<4; i++)
+    {
+        fscanf(f, "%lf", &buffer);
+        interior_price[i].gia_noi_that= buffer;
+    }
+    fclose(f);
+
+    f = fopen("C:\\Khoa\\UTE_HK1_N2\\C Programming\\Cars\\car_insurance.txt", "r");
+    for (int i=0; i<3; i++)
+    {
+        fscanf(f, "%lf", &buffer);
+        insurance_price[i].gia_bao_hanh= buffer;
+    }
+    fclose(f);
+
+    total = car_line(total,cars);
+    total = paint(total,paint_price);
+    total = interior(total,interior_price);
+    total = insurance(total,insurance_price);
+
+    printf("Tong thiet hai cho vi tien cua ban la: %lf", total);
     return 0;
 }
