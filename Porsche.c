@@ -159,6 +159,11 @@ int main()
         printf("BAN DUOC GIAM GIA 25 PHAN TRAM!\n");
         total=total*0.75;
     }
-    printf("\nTong thiet hai cho vi tien cua ban la: %lf", total);
+    else 
+    {
+    printf("\nRat tiec, ma code giam gia chua chinh xac!\n");
+    }
+    printf("\nTong thiet hai cho vi tien cua ban la: %lf\n\n", total);
+    
     return 0;
 }
