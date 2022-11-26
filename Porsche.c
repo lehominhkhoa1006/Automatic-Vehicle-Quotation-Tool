@@ -21,19 +21,19 @@ struct BaoHanhXe {
 double car_line(double current_total, struct DongXe cars[])
 {   
     int m;
-    printf("\nDanh sach nhung dong xe Porsche chung toi hien co:\n");
-    printf("1. Porsche Cayenne (Gia tieu chuan: 4.930.000.000 VND)\n");
-    printf("2. Porsche Macan (Gia tieu chuan: 3.150.000.000 VND)\n");
-    printf("3. Porsche Taycan (Gia tieu chuan: 4.170.000.000 VND)\n");
-    printf("4. Porsche Panamera (Gia tieu chuan: 5.560.000.000 VND)\n");
-    printf("5. Porsche 718 Boxster (Gia tieu chuan: 3.740.000.000 VND)\n");
-    printf("6. Porsche 718 Cayman (Gia tieu chuan: 3.620.000.000 VND)\n");
-    printf("7. Porsche 911 Carrera (Gia tieu chuan: 7.130.000.000 VND)\n");
-    printf("8. Porsche 911 Targa (Gia tieu chuan: 8.500.000.000 VND)\n");
-    printf("9. Porsche 911 Turbo (Gia tieu chuan: 13.420.000.000 VND)\n");
-    printf("10. Porsche 911 GT2 RS (Gia tieu chuan: 20.200.000.000 VND)\n");
+    printf("\nList of Porsche models we currently have:\n");
+    printf("1. Porsche Cayenne (Standard price: 4.930.000.000 VND)\n");
+    printf("2. Porsche Macan (Standard price: 3.150.000.000 VND)\n");
+    printf("3. Porsche Taycan (Standard price: 4.170.000.000 VND)\n");
+    printf("4. Porsche Panamera (Standard price: 5.560.000.000 VND)\n");
+    printf("5. Porsche 718 Boxster (Standard price: 3.740.000.000 VND)\n");
+    printf("6. Porsche 718 Cayman (Standard price: 3.620.000.000 VND)\n");
+    printf("7. Porsche 911 Carrera (Standard price: 7.130.000.000 VND)\n");
+    printf("8. Porsche 911 Targa (Standard price: 8.500.000.000 VND)\n");
+    printf("9. Porsche 911 Turbo (Standard price: 13.420.000.000 VND)\n");
+    printf("10. Porsche 911 GT2 RS (Standard price: 20.200.000.000 VND)\n");
     do {
-        printf("Nhap vao 1 so dai dien cho dong xe ban muon mua:\n");
+        printf("Enter a number for the car you want to buy:\n");
         scanf("%d", &m);
     } 
     while((m<1)||(m>10));
@@ -45,21 +45,21 @@ double car_line(double current_total, struct DongXe cars[])
 double paint(double current_total, struct MauXe paint_price[])
 {
     int n;
-    printf("\nDanh sach nhung mau sac chung toi hien co:\n");
-    printf("1. Den (Gia tieu chuan: 283.500.000 VND)\n");
-    printf("2. Trang (Gia tieu chuan: 283.500.000 VND)\n");
-    printf("3. Xam (Gia tieu chuan: 297.500.000 VND)\n");
-    printf("4. Nau (Gia tieu chuan: 297.500.000 VND)\n");
-    printf("5. Kem (Gia tieu chuan: 297.500.000 VND)\n");
-    printf("6. Do (Gia tieu chuan: 318.280.225 VND)\n");
-    printf("7. Xanh (Gia tieu chuan: 318.280.225 VND)\n");
-    printf("8. Vang (Gia tieu chuan: 318.280.225 VND)\n");
+    printf("\nList of colors we have available:\n");
+    printf("1. Black (Standard price: 283.500.000 VND)\n");
+    printf("2. White (Standard price: 283.500.000 VND)\n");
+    printf("3. Grey (Standard price: 297.500.000 VND)\n");
+    printf("4. Brown(Standard price: 297.500.000 VND)\n");
+    printf("5. Cream (Standard price: 297.500.000 VND)\n");
+    printf("6. Red (Standard price: 318.280.225 VND)\n");
+    printf("7. Blue (Standard price: 318.280.225 VND)\n");
+    printf("8. Yellow (Standard price: 318.280.225 VND)\n");
 
     do {
-        printf("Nhap vao 1 so dai dien cho mau xe ban muon mua:\n");
+        printf("Enter 1 number for the color of the car you want to buy:\n");
         scanf("%d", &n);
     } 
-    while((n<1)||(n>4));
+    while((n<1)||(n>8));
 
     current_total+=paint_price[n - 1].gia_son;
     return current_total;
@@ -67,35 +67,35 @@ double paint(double current_total, struct MauXe paint_price[])
 
 double interior(double current_total, struct NoiThatXe interior_price[])
 {
-    int o;
-    printf("\nDanh sach nhung loai noi that chung toi hien co:\n");
-    printf("1. Low-class (So tien bo sung them: 0VND)\n");
-    printf("2. Standard-class (So tien bo sung them: 25.000.000 VND)\n");
-    printf("3. High-class (So tien bo sung them: 50.000.000 VND)\n");
-    printf("4. Premium-class (So tien bo sung them: 100.000.000 VND)\n");
+    int v;
+    printf("\nList of types of interior we currently have:\n");
+    printf("1. Low-class (Additional amount: 0VND)\n");
+    printf("2. Standard-class (Additional amount: 25.000.000 VND)\n");
+    printf("3. High-class (Additional amount: 50.000.000 VND)\n");
+    printf("4. Premium-class (Additional amount: 100.000.000 VND)\n");
 
     do {
-        printf("Nhap vao 1 so dai dien cho noi that ban muon mua:\n");
-        scanf("%d", &o);
+        printf("Enter 1 number for the interior you want to buy:\n");
+        scanf("%d", &v);
     } 
-    while((o<1)||(o>4));
+    while((v<1)||(v>4));
 
-    current_total+=interior_price[o - 1].gia_noi_that;
+    current_total+=interior_price[v - 1].gia_noi_that;
     return current_total;
 }
 
 double insurance(double current_total, struct BaoHanhXe insurance_price[])
 {
     int p;
-    printf("\nDanh sach nhung goi bao hanh xe chung toi hien co:\n");
-    printf("1. Bao hanh mau son 3 nam (Gia tieu chuan: 36.400.000 VND)\n");
-    printf("2. Bao hanh phu tung 3 nam (Gia tieu chuan: 27.300.000 VND)\n");
-    printf("3. Bao hanh than vo 3 nam (Gia tieu chuan: 81.900.000 VND)\n");
+    printf("\nList of car warranty packages we currently have:\n");
+    printf("1. Paint warranty 3 year (Standard price: 36.400.000 VND)\n");
+    printf("2. Spare parts warranty 3 year (Standard price: 27.300.000 VND)\n");
+    printf("3. Body warranty 3 year (Standard price: 81.900.000 VND)\n");
     do {
-        printf("Nhap vao 1 so dai dien cho goi bao hanh ban muon mua:\n");
+        printf("Enter a number for the warranty pack you want to buy:\n");
         scanf("%d", &p);
     } 
-    while((p<1)||(p>4));
+    while((p<1)||(p>3));
 
     current_total+=insurance_price[p - 1].gia_bao_hanh;
     return current_total;
@@ -146,24 +146,24 @@ int main()
     }
     fclose(f);
 
-    printf("\nXin chao quy khach!\n");
+    printf("\nWelcome to PORSCHE PRICING SYSTEM!\n");
     total = car_line(total,cars);
     total = paint(total,paint_price);
     total = interior(total,interior_price);
     total = insurance(total,insurance_price);
-    printf("\nNhap vao ma code giam gia: ");
+    printf("\nEnter discount code: ");
     scanf("%s", code_giam_gia);
     if (!strcmp(code_giam_gia, "391875"))
     {
-        printf("XIN CHUC MUNG! CODE GIAM GIA CUA BAN CHINH XAC!\n");
-        printf("BAN DUOC GIAM GIA 25 PHAN TRAM!\n");
+        printf("CONGRATULATIONS! YOUR DISCOUNT CODE EXACTLY!\n");
+        printf("YOU GET 25 PERCENT OFF!\n");
         total=total*0.75;
     }
     else 
     {
-    printf("\nRat tiec, ma code giam gia chua chinh xac!\n");
+    printf("\nSorry, the discount code is not correct!\n");
     }
-    printf("\nTong thiet hai cho vi tien cua ban la: %lf\n\n", total);
+    printf("\nThe total damage to your wallet is: %lf\n\n", total);
     
     return 0;
 }
