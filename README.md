@@ -92,9 +92,6 @@ End
    ```
 
 ---
-### 📷 Demo Screenshot (Optional)  
-*(You can add a GIF or screenshot of the console output here)*  
-
 ---
 
 ### 🚀 Future Improvements  
