@@ -17,3 +17,39 @@ This system simulates the process of car purchasing with discounts and promotion
 - **Kim Ngọc Hưng – 21145015**  
 - **Lê Hồ Minh Khoa – 21145019**  
 - **Bùi Anh Kiệt – 21145590**  
+
+---
+
+### ⚙️ Features  
+✅ Select Porsche car models with base prices  
+✅ Choose paint color with additional cost  
+✅ Configure interior (from low-class to premium)  
+✅ Add warranty packages  
+✅ Apply discount codes for special promotions  
+✅ Display final total price  
+
+---
+
+### 📖 How It Works  
+**Flowchart of the program logic:**  
+
+```
+Start
+   ↓
+Enter car model
+   ↓
+Enter paint color
+   ↓
+Enter interior option
+   ↓
+Enter warranty package
+   ↓
+Insert discount code
+   ↓
+[Correct] → Total * 0.75 → Print Total
+[Wrong]   → Print Total
+   ↓
+End
+```
+
+---
