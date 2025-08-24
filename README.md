@@ -53,3 +53,21 @@ End
 ```
 
 ---
+### 🛠️ Technology Stack  
+- **Language:** C  
+- **Concepts Used:**  
+  - Structs for data organization  
+  - File I/O to load car options and prices  
+  - Loops and conditions for user input  
+  - String comparison for discount code checking  
+
+---
+
+### 📂 Project Structure  
+```
+├── car_line.txt        # Data for Porsche models
+├── car_paint.txt       # Data for paint colors
+├── car_interior.txt    # Data for interior options
+├── car_insurance.txt   # Data for warranty packages
+└── main.c              # Main C program
+```
