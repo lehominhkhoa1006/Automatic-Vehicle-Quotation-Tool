@@ -71,3 +71,24 @@ End
 ├── car_insurance.txt   # Data for warranty packages
 └── main.c              # Main C program
 ```
+
+---
+
+### ▶️ How to Run  
+1. Clone this repository:  
+   ```bash
+   git clone https://github.com/<your-username>/Automatic-Vehicle-Quotation-Tool.git
+   cd Automatic-Vehicle-Quotation-Tool
+   ```
+
+2. Compile the program:  
+   ```bash
+   gcc main.c -o quotation
+   ```
+
+3. Run the program:  
+   ```bash
+   ./quotation
+   ```
+
+---
