@@ -92,7 +92,6 @@ End
    ```
 
 ---
----
 
 ### 🚀 Future Improvements  
 - Add more car brands beyond Porsche  
