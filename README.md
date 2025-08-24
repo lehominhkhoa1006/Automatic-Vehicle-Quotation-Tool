@@ -92,3 +92,18 @@ End
    ```
 
 ---
+### 📷 Demo Screenshot (Optional)  
+*(You can add a GIF or screenshot of the console output here)*  
+
+---
+
+### 🚀 Future Improvements  
+- Add more car brands beyond Porsche  
+- Build a GUI version (desktop/web)  
+- Connect with database for real-time car price updates  
+- Multi-language support (English & Vietnamese)  
+
+---
+
+### 📜 License  
+This project was built for **educational purposes** as part of the **C Programming course** at HCMUTE.  
